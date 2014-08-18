@@ -32,6 +32,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Stripe.net.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Machine.Specifications">
       <HintPath>..\packages\Machine.Specifications.0.8.2\tools\Machine.Specifications.dll</HintPath>
@@ -187,6 +193,7 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Stripe.net.snk" />
     <None Include="_web_event_hooks\event_hooks_handler.ashx" />
     <None Include="_web_event_hooks\web.config">
       <SubType>Designer</SubType>
