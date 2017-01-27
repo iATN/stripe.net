@@ -40,8 +40,10 @@ namespace Stripe
 		internal static WebRequest GetWebRequest(string url, string method, string apiKey = null, bool useBearer = false)
 		{
 			apiKey = apiKey ?? StripeConfiguration.GetApiKey();
+            
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
 
-			var request = (HttpWebRequest)WebRequest.Create(url);
+            var request = (HttpWebRequest)WebRequest.Create(url);
 			request.Method = method;
 
 			if(!useBearer)
