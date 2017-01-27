@@ -10,9 +10,19 @@
 		public static string InvoiceItems
 		{
 			get { return BaseUrl + "/invoiceitems"; }
-		}
+        }
 
-		public static string Tokens
+        public static string CustomerDiscount
+        {
+            get { return BaseUrl + "/customers/{0}/discount"; }
+        }
+ 
+        public static string SubscriptionDiscount
+        {
+            get { return BaseUrl + "/customers/{0}/subscriptions{1}/discount"; }
+        }
+
+        public static string Tokens
 		{
 			get { return BaseUrl + "/tokens"; }
 		}

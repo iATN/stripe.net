@@ -59,5 +59,10 @@ namespace Stripe
 
 			return Mapper<StripeSubscription>.MapCollectionFromJson(response);
 		}
-	}
+        public virtual void DeleteSubscriptionDiscount(string customerId, string subscriptionId)
+        {
+            var url = string.Format(Urls.SubscriptionDiscount, customerId, subscriptionId);
+            var response = Requestor.Delete(url, ApiKey);
+        }
+    }
 }

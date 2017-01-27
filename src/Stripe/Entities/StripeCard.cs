@@ -70,5 +70,22 @@ namespace Stripe
 				ExpandableProperty<StripeRecipient>.Map(value, s => RecipientId = s, o => Recipient = o);
 			}
 		}
-	}
+
+        #region Expandable Customer
+        public string CustomerId { get; set; }
+
+        [JsonIgnore]
+        public StripeCustomer Customer { get; set; }
+
+        [JsonProperty("customer")]
+        internal object InternalCustomer
+        {
+            set
+            {
+                ExpandableProperty<StripeCustomer>.Map(value, s => CustomerId = s, o => Customer = o);
+            }
+        }
+        #endregion
+
+    }
 }
