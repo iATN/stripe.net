@@ -29,7 +29,10 @@ namespace Stripe
 		[JsonProperty("statement_description")]
 		public string StatementDescription { get; set; }
 
-		[JsonProperty("metadata")]
+        [JsonProperty("receipt_email")]
+        public string ReceiptEmail { get; set; }
+
+        [JsonProperty("metadata")]
 		public Dictionary<string, string> Metadata { get; set; }
 	}
 }
